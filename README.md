@@ -1,6 +1,6 @@
 # CryptoServer
 
-CryptoServer provides a technique for deligating cryptographic
+CryptoServer provides a technique for delegating cryptographic
 hmacing to a server. The author feels this has advantages for
 many applications.
 
@@ -50,7 +50,7 @@ if __name__ == '__main__':
 ```
 
 Now if we refactor this code to use the cryptoserver.
-We make use the third party requests library.
+We make use of the third party requests library.
 
 ```python
 from requests import post
@@ -73,7 +73,7 @@ if __name__ == '__main__':
 	print(compute(b"apples and pears")
 ```
 
-We see our hmac call and the required secrets are deligated
+We see our hmac call and the required secrets are delegated
 to the cryptoserver.
 
 
@@ -150,7 +150,7 @@ space.
    ...
    >>> for name in product(hexchars(), hexchars()):
    ...     name = "".join(name)
-   ...     with open ("/secrets/{!s}".format(name), 'wb') as file:
+   ...     with open (f"/secrets/{name}", 'wb') as file:
    ...         file.write(urandom(32 * 65536))
    ...
    >>>
@@ -168,7 +168,7 @@ All runtime parameters are set with environment variables.
 
 ### CRYPTOSERVER_MODE
 
-This can be one of three values: Mode0, Mode16, Mode32.
+This can be one of three values: MODE0, MODE16, MODE32.
 The default is Mode0 (see Implementation section above).
 
 ### CRYPTOSERVER_SECRETDIR
@@ -183,17 +183,17 @@ output.
 
 The lowest level of logging of this application is DEBUG.
 
+```bash
+   $ RUST_LOG=INFO cryptoserver
+   2021-01-03T11:18:58Z INFO  cryptoserver cryptoserver started
+```
+
 
 ### CRYPTOSERVER_BIND
 
 The bind path given to the server.
 The default is "0.0.0.0:8080".
 
-
-```bash
-   $ RUST_LOG=INFO cryptoserver
-   2021-01-03T11:18:58Z INFO  cryptoserver cryptoserver started
-```
 
 ## <a name="tips-and-tricks"></a> Tips and Tricks 
 
