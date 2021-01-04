@@ -9,11 +9,11 @@ after creation. We solve this problem by using a very large
 array of secrets. Even if millions of requests are processed,
 the probability of using the same secret twice is close to 0.
 
-[Usage](#usage)
-[Building](#building)
-[Implementation Notes](#implementation)
-[Runtime Parameters](#runtime-parameters)
-[Tips and Tricks](#tips-and-tricks)
+* [Usage](#usage)
+* [Building](#building)
+* [Implementation Notes](#implementation)
+* [Runtime Parameters](#runtime-parameters)
+* [Tips and Tricks](#tips-and-tricks)
 
 
 ## <a name="usage"></a> Usage
