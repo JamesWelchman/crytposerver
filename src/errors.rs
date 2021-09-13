@@ -5,16 +5,15 @@ pub type Result<T> = std::result::Result<T, BoxErr>;
 
 #[derive(Copy, Clone, Debug)]
 pub enum Error {
-	BadSecretFileMode0,
-	BadSecretFileMode16,
-	BadSecretFileMode32,
+    BadSecretFileMode0,
+    BadSecretFileMode16,
+    BadSecretFileMode32,
 }
 
 impl fmt::Display for Error {
-	fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-		write!(f, "{:?}", self)
-	}
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{:?}", self)
+    }
 }
 
-impl std::error::Error for Error{}
-
+impl std::error::Error for Error {}
