@@ -2,7 +2,6 @@ use std::fs;
 use std::thread::sleep;
 use std::time::Duration;
 
-use env_logger;
 use log::{error, info};
 
 #[macro_use]
