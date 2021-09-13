@@ -12,7 +12,7 @@ the probability of using the same secret twice is close to 0.
 * [Usage](#usage)
 * [Building](#building)
 * [Implementation Notes](#implementation)
-* [Runtime Parameters](#runtime-parameters)
+* [Environmet Variables](#envvar-parameters)
 * [Tips and Tricks](#tips-and-tricks)
 
 
@@ -46,7 +46,7 @@ def compute(msg):
 if __name__ == '__main__':
 	# Compute some digests
 	print(compute(b"hello world"))
-	print(compute(b"apples and pears")
+	print(compute(b"apples and pears"))
 ```
 
 Now if we refactor this code to use the cryptoserver.
@@ -56,7 +56,7 @@ We make use of the third party requests library.
 from requests import post
 
 
-CRYPTO_SERVER_URL = "http://localhost:8080/hmac";
+CRYPTO_SERVER_URL = "http://localhost:8080/hmac"
 
 
 def compute(msg):
@@ -70,7 +70,7 @@ def compute(msg):
 if __name__ == '__main__':
 	# Compute some digests
 	print(compute(b"hello world"))
-	print(compute(b"apples and pears")
+	print(compute(b"apples and pears"))
 ```
 
 We see our hmac call and the required secrets are delegated
@@ -97,7 +97,7 @@ The default behaviour of cryptoserver is to read a single secret
 from the filesystem. This is expected to be a single file of length
 32 at the position /secrets/secret.
 
-### Creating the default runtime
+### Creating the default mode
 
 To run on the default with a single secret follow these steps:
 
@@ -162,9 +162,7 @@ you never need to rotate the secrets unless the HDD which is storing
 them is somehow compromised.
 
 
-## <a name="runtime-parameters"></a> Runtime Parameters
-
-All runtime parameters are set with environment variables.
+## <a name="envvar-parameters"></a> Environment Variables
 
 ### CRYPTOSERVER_MODE
 
